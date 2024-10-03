@@ -24,3 +24,13 @@ contract Todos {
 
         todos.push(todo);
     }
+    // Solidity automatically created a getter for 'todos' so
+    // you don't actually need this function.
+    function get(uint256 _index)
+        public
+        view
+        returns (string memory text, bool completed)
+    {
+        Todo storage todo = todos[_index];
+        return (todo.text, todo.completed);
+    }
