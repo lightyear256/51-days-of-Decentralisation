@@ -34,3 +34,15 @@ contract Todos {
         Todo storage todo = todos[_index];
         return (todo.text, todo.completed);
     }
+    // update text
+    function updateText(uint256 _index, string calldata _text) public {
+        Todo storage todo = todos[_index];
+        todo.text = _text;
+    }
+
+    // update completed
+    function toggleCompleted(uint256 _index) public {
+        Todo storage todo = todos[_index];
+        todo.completed = !todo.completed;
+    }
+}
