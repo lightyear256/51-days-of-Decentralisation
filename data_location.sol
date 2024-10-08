@@ -8,3 +8,14 @@ contract DataLocations {
     struct MyStruct {
         uint256 foo;
     }
+    mapping(uint256 => MyStruct) myStructs;
+
+    function f() public {
+        // call _f with state variables
+        _f(arr, map, myStructs[1]);
+
+        // get a struct from a mapping
+        MyStruct storage myStruct = myStructs[1];
+        // create a struct in memory
+        MyStruct memory myMemStruct = MyStruct(0);
+    }
