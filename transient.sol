@@ -30,3 +30,21 @@ contract TestStorage {
         msg.sender.call(b);
     }
 }
+contract TestTransientStorage {
+    bytes32 constant SLOT = 0;
+
+    function test() public {
+        assembly {
+            tstore(SLOT, 321)
+        }
+        bytes memory b = "";
+        msg.sender.call(b);
+    }
+
+    function val() public view returns (uint256 v) {
+        assembly {
+            v := tload(SLOT)
+        }
+    }
+}
+
