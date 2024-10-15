@@ -47,4 +47,20 @@ contract TestTransientStorage {
         }
     }
 }
+contract ReentrancyGuard {
+    bool private locked;
 
+    modifier lock() {
+        require(!locked);
+        locked = true;
+        _;
+        locked = false;
+    }
+
+    // 35313 gas
+    function test() public lock {
+        // Ignore call error
+        bytes memory b = "";
+        msg.sender.call(b);
+    }
+}
