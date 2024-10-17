@@ -77,3 +77,10 @@ contract ReentrancyGuardTransient {
             tstore(SLOT, 0)
         }
     }
+    // 21887 gas
+    function test() external lock {
+        // Ignore call error
+        bytes memory b = "";
+        msg.sender.call(b);
+    }
+}
