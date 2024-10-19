@@ -6,3 +6,7 @@ contract Function {
     function returnMany() public pure returns (uint256, bool, uint256) {
         return (1, true, 2);
     }
+    // Return values can be named.
+    function named() public pure returns (uint256 x, bool b, uint256 y) {
+        return (1, true, 2);
+    }
