@@ -31,3 +31,15 @@ contract Function {
 
         return (i, b, j, x, y);
     }
+    // Cannot use map for either input or output
+
+    // Can use array for input
+    function arrayInput(uint256[] memory _arr) public {}
+
+    // Can use array for output
+    uint256[] public arr;
+
+    function arrayOutput() public view returns (uint256[] memory) {
+        return arr;
+    }
+}
