@@ -43,3 +43,17 @@ contract Function {
         return arr;
     }
 }
+// Call function with key-value inputs
+contract XYZ {
+    function someFuncWithManyInputs(
+        uint256 x,
+        uint256 y,
+        uint256 z,
+        address a,
+        bool b,
+        string memory c
+    ) public pure returns (uint256) {}
+
+    function callFunc() external pure returns (uint256) {
+        return someFuncWithManyInputs(1, 2, 3, address(0), true, "c");
+    }
