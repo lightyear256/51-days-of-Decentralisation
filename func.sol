@@ -57,3 +57,14 @@ contract XYZ {
     function callFunc() external pure returns (uint256) {
         return someFuncWithManyInputs(1, 2, 3, address(0), true, "c");
     }
+function callFuncWithKeyValue() external pure returns (uint256) {
+        return someFuncWithManyInputs({
+            a: address(0),
+            b: true,
+            c: "c",
+            x: 1,
+            y: 2,
+            z: 3
+        });
+    }
+}
