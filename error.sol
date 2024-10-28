@@ -9,3 +9,10 @@ contract Error {
         // - return values from calls to other functions
         require(_i > 10, "Input must be greater than 10");
     }
+    function testRevert(uint256 _i) public pure {
+        // Revert is useful when the condition to check is complex.
+        // This code does the exact same thing as the example above
+        if (_i <= 10) {
+            revert("Input must be greater than 10");
+        }
+    }
