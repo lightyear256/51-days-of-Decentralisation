@@ -14,3 +14,4 @@ contract Event {
         emit AnotherLog();
     }
 }
+// made some changes
